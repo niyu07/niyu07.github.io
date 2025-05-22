@@ -25,14 +25,12 @@ function App() {
         </header>
 
         {/* メインの中身 */}
-        {/* <main className="p-0"> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/tech" element={<Tech />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
-        {/* </main> */}
         {/* フッター */}
         <footer className="p-4 text-center">
           <p>© 2023 My Website</p>
