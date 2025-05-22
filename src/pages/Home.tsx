@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="bg-custom-gradient min-h-[300vh] w-full">
+    <div className="min-h-[300vh] w-full">
       {/* アイコンと名前 */}
       <div className="flex justify-center pt-[30vh]">
         <img
