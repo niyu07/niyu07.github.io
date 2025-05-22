@@ -28,7 +28,6 @@
     },
 
     "types": ["vitest/globals"]
-
   },
   "include": ["vite.config.ts", "vitest-setup.ts"]
 }
