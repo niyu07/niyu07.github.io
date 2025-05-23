@@ -1,3 +1,9 @@
+import profileIcon from '../assets/profile-icon.jpg';
+import githubMark from '../assets/github-mark.svg';
+import xIcon from '../assets/x-icon.svg';
+import qiitaIcon from '../assets/qiita-icon.svg'; 
+import zennIcon from '../assets/zenn-icon.svg'; 
+
 export default function Home() {
   return (
     <div className="min-h-[300vh] w-full">
@@ -5,7 +11,7 @@ export default function Home() {
       <div className="flex justify-center pt-[30vh]">
         <img
           className="w-64 h-64 rounded-full object-cover"
-          src="src/assets/profile-icon.JPG"
+          src={profileIcon}
           alt="アイコン"
         />
         <div className="text-center pl-20">
@@ -26,7 +32,7 @@ export default function Home() {
             <a href="https://github.com/niyu07">
                 <button className="flex items-center gap-4 bg-white text-black w-80 h-20 px-6 py-4 rounded shadow-md">
               <img
-                src="src/assets/github-mark.svg"
+                src={githubMark}
                 alt="GitHubアイコン"
                 className="w-10 h-10 rounded-full object-cover"
               />
@@ -39,7 +45,7 @@ export default function Home() {
             <a href="https://x.com/niyu98194">
                 <button className="flex items-center gap-4 bg-white text-black w-80 h-20 px-6 py-4 rounded shadow-md">
               <img
-                src="src/assets/x-icon.svg"
+                src={xIcon}
                 alt="Xアイコン"
                 className="w-10 h-10 rounded-full object-cover"
               />
@@ -52,7 +58,7 @@ export default function Home() {
 <a href="https://qiita.com/niyu">
   <button className="flex items-center gap-4 bg-white text-black w-80 h-20 px-6 py-4 rounded shadow-md">
     <img
-      src="src/assets/qiita-icon.svg"
+      src={qiitaIcon}
       alt="Qiitaアイコン"
       className="w-10 h-10 rounded-full object-cover"
     />
@@ -63,7 +69,7 @@ export default function Home() {
             <a href="https://zenn.dev/niyu">
                 <button className="flex items-center gap-4 bg-white text-black w-80 h-20 px-6 py-4 rounded shadow-md">
               <img
-                src="src/assets/zenn-icon.svg"
+                src={zennIcon}
                 alt="Zennアイコン"
                 className="w-10 h-10 rounded-full object-cover"
               />
