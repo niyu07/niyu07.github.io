@@ -48,14 +48,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* <section className="mb-10">
-        <h2 className="text-xl mb-4">Certification</h2>
-        <div className="bg-white text-black p-4 rounded-xl shadow">
-          <p>20XX.05</p>
-          <p className="font-bold">？？？？</p>
-        </div>
-      </section> */}
-
       <section className="mb-10">
   <h2 className="text-xl mb-4">Events</h2>
 
