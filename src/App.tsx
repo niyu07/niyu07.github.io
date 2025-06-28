@@ -11,16 +11,16 @@ function App() {
         {/* ヘッダー */}
         <header className="p-8 flex gap-8 justify-end">
           <Link to="/" className="text-white">
-            ホーム
+            HOME
           </Link>
           <Link to="/about" className="text-white">
-            このサイトについて
+            ABOUT ME 
           </Link>
           <Link to="/tech" className="text-white">
-            技術
+            TECH
           </Link>
           <Link to="/contact" className="text-white">
-            お問い合わせ
+            CONTACT
           </Link>
         </header>
 
