@@ -126,6 +126,34 @@ export default function About() {
       ドコモグループのセキュリティ業務と、フィッシングサイトの仕組みについて学びました。
     </p>
   </div>
+
+  <div className="bg-white text-black p-4 rounded-xl shadow mb-4">
+    <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full mb-2">インターン</span>
+    <p>2025.07.05（土）</p>
+    <p className="font-bold">CyberAgent</p>
+    <p className="text-sm">
+      データセンタの見学や実際にサーバーやスイッチを触ってネットワークについて学びました。
+    </p>
+  </div>
+
+  <div className="bg-white text-black p-4 rounded-xl shadow mb-4">
+    <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full mb-2">インターン</span>
+    <p>2025.08.16（月）~ 08.29（金）</p>
+    <p className="font-bold">チームラボ株式会社</p>
+    <p className="text-sm">
+      スマホアプリエンジニアとしてサマーインターンに参加させていただきました。
+    </p>
+  </div>
+
+  <div className="bg-white text-black p-4 rounded-xl shadow mb-4">
+    <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full mb-2">インターン</span>
+    <p>2025.08.30（土）</p>
+    <p className="font-bold">株式会社ジーニー</p>
+    <p className="text-sm">
+      Webアプリケーションの実装課題に取り組みました。
+    </p>
+  </div>
+
 </section>
     </>
   );
