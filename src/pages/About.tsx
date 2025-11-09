@@ -9,8 +9,9 @@ export default function About() {
         <h2 className="text-xl mb-4">Introduction</h2>
         <ul className="space-y-2 text-lg pl-4">
           <li>所属大学：広島市立大学</li>
-          <li>学部・学科：情報科学部 情報科学科</li>
+          <li>学部・学科：情報科学部 情報科学科 コミュニケーション講座</li>
           <li>所属サークル：いちぴろエクスプローラ，天地創造部</li>
+          <li>NPO法人：イベント事業本部中・四国事業部</li>
           <li>興味・志望分野：ネットワーク、セキュリティ、アプリ開発</li>
         </ul>
       </section>
@@ -113,6 +114,13 @@ export default function About() {
     <p className="font-bold">NFLabs. Purple Flair Workshop #1</p>
     <p className="text-sm">ワークショップ形式で実践的なサイバーセキュリティを学びました。</p>
   </div>
+
+  <div className="bg-white text-black p-4 rounded-xl shadow mb-4">
+    <span className="inline-block bg-yellow-400 text-white text-xs px-2 py-1 rounded-full mb-2">参加</span>
+    <p>2025.10.25</p>
+    <p className="font-bold">セキュリティミニキャンプ in Hiroshima 2025</p>
+    <p className="text-sm">広島で開催されたセキュリティの勉強イベントに参加し、実践的な講義や演習を体験しました。</p>
+  </div>
 </section>
 
 <section className="mb-10">
@@ -151,6 +159,38 @@ export default function About() {
     <p className="font-bold">株式会社ジーニー</p>
     <p className="text-sm">
       Webアプリケーションの実装課題に取り組みました。
+    </p>
+  </div>
+
+  <div className="bg-white text-black p-4 rounded-xl shadow mb-4">
+    <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full mb-2">仕事体験</span>
+    <p>2025.09.04（木）~ 2025.09.05（金）</p>
+    <p className="font-bold">株式会社エネコム</p>
+    <p className="text-sm">
+      二日間でネットワーク部門とシステム部門の仕事体験をしました。
+    </p>
+  </div>
+
+  <div className="bg-white text-black p-4 rounded-xl shadow mb-4">
+    <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full mb-2">インターン</span>
+    <p>2025.09.17（水）</p>
+    <p className="font-bold">株式会社インターネットイニシアティブ</p>
+    <p className="text-sm">オンラインのセキュリティ概論に参加しました。</p>
+  </div>
+
+  <div className="bg-white text-black p-4 rounded-xl shadow mb-4">
+    <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full mb-2">インターン</span>
+    <p>2025.10.27（月）</p>
+    <p className="font-bold">株式会社インターネットイニシアティブ</p>
+    <p className="text-sm">SOCの見学とエンジニアの方と交流しました。</p>
+  </div>
+
+  <div className="bg-white text-black p-4 rounded-xl shadow mb-4">
+    <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full mb-2">インターン</span>
+    <p>2025.11.09（日）</p>
+    <p className="font-bold">株式会社NTT ME</p>
+    <p className="text-sm">
+      インフラの議場についてゲーム形式で学びました。
     </p>
   </div>
 
