@@ -121,47 +121,47 @@ export default function Tech() {
   };
 
   return (
-    <div className="min-h-screen p-8">
-      <h2 className="text-4xl font-bold text-white mb-10 text-center drop-shadow-lg">
+    <div className="min-h-screen p-4 md:p-8">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-10 text-center drop-shadow-lg">
         My Skills
       </h2>
 
-      <div className="flex flex-wrap justify-center gap-8 mb-20">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12 md:mb-20">
         {skills.map((skill, i) => (
           <div
             key={i}
-            className="bg-white rounded-2xl shadow-lg p-6 w-72 sm:w-80 transition-transform hover:scale-105"
+            className="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-full sm:w-72 md:w-80 transition-transform hover:scale-105"
           >
             <div className="flex items-center justify-center gap-3 mb-4">
               {getIcon(skill.name)}
-              <h3 className="text-2xl font-semibold text-slate-800">
+              <h3 className="text-xl md:text-2xl font-semibold text-slate-800">
                 {skill.name}
               </h3>
             </div>
-            <p className="text-slate-700 text-lg">使用歴：{skill.years}年</p>
-            <p className="text-slate-700 text-lg">使用シーン：{skill.scene}</p>
+            <p className="text-slate-700 text-base md:text-lg">使用歴：{skill.years}年</p>
+            <p className="text-slate-700 text-base md:text-lg">使用シーン：{skill.scene}</p>
           </div>
         ))}
       </div>
 
-      <h2 className="text-4xl font-bold text-white mb-10 text-center drop-shadow-lg">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-10 text-center drop-shadow-lg">
         Tools & Environments
       </h2>
 
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-8">
         {tools.map((tool, i) => (
           <div
             key={i}
-            className="bg-white rounded-2xl shadow-lg p-6 w-72 sm:w-80 transition-transform hover:scale-105"
+            className="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-full sm:w-72 md:w-80 transition-transform hover:scale-105"
           >
             <div className="flex items-center justify-center gap-3 mb-4">
               {tool.icon}
-              <h3 className="text-2xl font-semibold text-slate-800">
+              <h3 className="text-xl md:text-2xl font-semibold text-slate-800">
                 {tool.name}
               </h3>
             </div>
-            <p className="text-slate-700 text-lg">使用歴：{tool.years}年</p>
-            <p className="text-slate-700 text-lg">使用シーン：{tool.scene}</p>
+            <p className="text-slate-700 text-base md:text-lg">使用歴：{tool.years}年</p>
+            <p className="text-slate-700 text-base md:text-lg">使用シーン：{tool.scene}</p>
           </div>
         ))}
       </div>
