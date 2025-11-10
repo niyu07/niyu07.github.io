@@ -16,7 +16,7 @@ function App() {
             ホーム
           </Link>
           <Link to="/about" className="text-white">
-            このサイトについて
+            この私について
           </Link>
           <Link to="/tech" className="text-white">
             技術
