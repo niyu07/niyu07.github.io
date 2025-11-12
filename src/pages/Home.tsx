@@ -1,4 +1,4 @@
-import profileIcon from '../assets/profile-icon.jpg';
+const profileIcon = new URL('../assets/profile-icon.JPG', import.meta.url).href;
 import githubMark from '../assets/github-mark.svg';
 import xIcon from '../assets/x-icon.svg';
 import qiitaIcon from '../assets/qiita-icon.svg'; 
