@@ -4,9 +4,6 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
@@ -52,3 +49,23 @@ export default tseslint.config({
   },
 });
 ```
+
+## Environment variables (EmailJS)
+
+This project uses EmailJS for the contact form. Create a local `.env` file in the repository root with the following variables (do NOT commit `.env`). A safe example is provided in `.env.example`.
+
+Required variables:
+
+- VITE_EMAILJS_SERVICE_ID
+- VITE_EMAILJS_TEMPLATE_ID
+- VITE_EMAILJS_PUBLIC_KEY
+
+Example:
+
+```text
+VITE_EMAILJS_SERVICE_ID=service_xxx
+VITE_EMAILJS_TEMPLATE_ID=template_yyy
+VITE_EMAILJS_PUBLIC_KEY=publicKey_zzz
+```
+
+After creating `.env`, restart the dev server (`npm run dev`) so Vite loads the new env vars. For production, set the same variables in your CI or create `.env` locally and run the build (`npm run build`) before deploying `dist` to your Pages branch.
