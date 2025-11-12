@@ -1,4 +1,5 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches:
@@ -9,24 +10,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
       - name: Install dependencies
         run: npm ci
 
-      - Build
-      - run: npm run build
+      - name: Build
+        run: npm run build
 
       - name: Copy index -> 404 for SPA routing
         run: cp -a dist/index.html dist/404.html || true
-      
+
+      - name: Copy CNAME into dist
+        run: cp -f CNAME dist/CNAME || true
+
       - name: Deploy to gh-pages
-        useus: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
