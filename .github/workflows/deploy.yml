@@ -5,17 +5,23 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Install dependencies
         run: npm ci
@@ -33,5 +39,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # If your repository disallows GITHUB_TOKEN write permissions, create a PAT
+          # and add it to repo secrets as GH_PAGES_TOKEN, then the action will use it.
+          personal_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./dist
           cname: niyu07.com
