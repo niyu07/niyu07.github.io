@@ -145,13 +145,17 @@ export default function Tech() {
       return res.json();
     };
 
+    const backendUrl =
+      import.meta.env.VITE_BACKEND_URL ||
+      "https://holy-violet-517d.niyu98194.workers.dev";
+
     const {
       data: calendar,
       error,
       isValidating,
       mutate,
     } = useSWR(
-      `/api/github/contributions/${encodeURIComponent(username)}`,
+      `${backendUrl}/api/github/contributions/${encodeURIComponent(username)}`,
       fetcher,
       {
         revalidateOnFocus: false,
