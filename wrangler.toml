@@ -1,0 +1,14 @@
+name = "niyu07-github-io"
+compatibility_date = "2025-11-17"
+
+# Pages configuration
+[site]
+bucket = "./dist"
+
+# Build configuration
+[build]
+command = "npm run build"
+cwd = ""
+
+# Routes (optional - for custom domain)
+# route = "niyu07.com/*"
