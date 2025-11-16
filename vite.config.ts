@@ -7,6 +7,16 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   base: "/",
+  server: {
+    proxy: {
+      // 開発中、フロントから /api/* へリクエストするときにバックエンドに転送します
+      "/api": {
+        target: "http://localhost:8787",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
   test: {
     globals: true,
     environment: "happy-dom",
