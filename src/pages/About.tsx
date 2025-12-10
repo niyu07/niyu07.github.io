@@ -120,6 +120,14 @@ export default function About() {
     <p className="font-bold">セキュリティミニキャンプ in Hiroshima 2025</p>
     <p className="text-sm">広島で開催されたセキュリティの勉強イベントに参加し、実践的な講義や演習を体験しました。</p>
   </div>
+
+  <div className="bg-white text-black p-4 rounded-xl shadow mb-4">
+    <span className="inline-block bg-yellow-400 text-white text-xs px-2 py-1 rounded-full mb-2">運営</span>
+    <p className="text-sm md:text-base">2025.12.06</p>
+    <p className="font-bold">Setory vol.3</p>
+    <p className="text-sm">広島で開催されたSetory vol.3に運営として参加しました。</p>
+  </div>
+
 </section>
 
 <section className="mb-8 md:mb-10">
