@@ -1,83 +1,122 @@
-const profileIcon = new URL('../assets/profile-icon.JPG', import.meta.url).href;
-import githubMark from '../assets/github-mark.svg';
-import xIcon from '../assets/x-icon.svg';
-import qiitaIcon from '../assets/qiita-icon.svg'; 
-import zennIcon from '../assets/zenn-icon.svg'; 
+const profileIcon = new URL("../assets/profile-icon.JPG", import.meta.url).href;
+import githubMark from "../assets/github-mark.svg";
+import xIcon from "../assets/x-icon.svg";
+import qiitaIcon from "../assets/qiita-icon.svg";
+import zennIcon from "../assets/zenn-icon.svg";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="min-h-[300vh] w-full px-4 md:px-0">
-      {/* アイコンと名前 */}
-      <div className="flex flex-col md:flex-row justify-center items-center pt-[20vh] md:pt-[30vh] gap-6 md:gap-0">
-        <img
-          className="w-40 h-40 md:w-64 md:h-64 rounded-full object-cover"
-          src={profileIcon}
-          alt="アイコン"
-        />
-        <div className="text-center md:text-left md:pl-20">
-          <p className="text-4xl md:text-6xl font-bold text-white border-b-4 border-white inline-block pb-6 md:pb-12 md:pt-20 w-full md:w-96">
-            niyu
+    <div className="min-h-screen w-full">
+      {/* Hero Section */}
+      <section className="min-h-screen flex flex-col justify-center items-center px-4 md:px-8">
+        <div className="text-center max-w-4xl">
+          <img
+            className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover mx-auto mb-8 border-4 border-white/20"
+            src={profileIcon}
+            alt="niyu"
+          />
+          <h1 className="text-transparent bg-clip-text bg-gradient-to-r  text-6xl mb-8">
+            <span className="text-white">Hi, I'm niyu!</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-white/80 mb-6">@niyu98194</p>
+          <p className="text-lg md:text-xl text-white/70 mb-12 max-w-2xl mx-auto">
+            大学生エンジニアです。ネットワーク、セキュリティ、アプリ開発に興味があります。
           </p>
-          <p className="text-xl md:text-2xl text-white pt-4">@niyu98194</p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link to="/about">
+              <button className="px-8 py-3 bg-white/90 text-black rounded-full font-semibold hover:bg-white transition-all hover:scale-105 border-2 border-white/80">
+                About Me
+              </button>
+            </Link>
+            <Link to="/contact">
+              <button className="px-8 py-3 bg-white/80 text-black rounded-full font-semibold hover:bg-white transition-all hover:scale-105 border-2 border-white/80">
+                Contact
+              </button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Linkセクション */}
-      <div className="pt-[30vh] md:pt-[60vh]">
-        <p className="text-2xl md:text-3xl text-white text-center mb-10">my Link</p>
-
-        <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full max-w-[90vw] md:max-w-none">
+      {/* Social Links Section */}
+      <section className="py-20 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+            Connect With Me
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {/* GitHub */}
-            <a href="https://github.com/niyu07" className="w-full">
-              <button className="flex items-center gap-4 bg-white text-black w-full md:w-80 h-20 px-6 py-4 rounded shadow-md hover:shadow-lg transition-shadow">
+            <a
+              href="https://github.com/niyu07"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all hover:scale-105 hover:shadow-xl">
                 <img
                   src={githubMark}
-                  alt="GitHubアイコン"
-                  className="w-10 h-10 rounded-full object-cover"
+                  alt="GitHub"
+                  className="w-12 h-12 mx-auto mb-4 group-hover:scale-110 transition-transform"
                 />
-                <span className="text-lg font-semibold">GitHub</span>
-              </button>
+                <p className="text-white text-center font-semibold">GitHub</p>
+              </div>
             </a>
 
-            {/* X */}
-            <a href="https://x.com/niyu98194" className="w-full">
-              <button className="flex items-center gap-4 bg-white text-black w-full md:w-80 h-20 px-6 py-4 rounded shadow-md hover:shadow-lg transition-shadow">
+            {/* X (Twitter) */}
+            <a
+              href="https://x.com/niyu98194"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all hover:scale-105 hover:shadow-xl">
                 <img
                   src={xIcon}
-                  alt="Xアイコン"
-                  className="w-10 h-10 rounded-full object-cover"
+                  alt="X"
+                  className="w-12 h-12 mx-auto mb-4 group-hover:scale-110 transition-transform"
                 />
-                <span className="text-lg font-semibold">X</span>
-              </button>
+                <p className="text-white text-center font-semibold">
+                  X (Twitter)
+                </p>
+              </div>
             </a>
 
             {/* Qiita */}
-            <a href="https://qiita.com/niyu" className="w-full">
-              <button className="flex items-center gap-4 bg-white text-black w-full md:w-80 h-20 px-6 py-4 rounded shadow-md hover:shadow-lg transition-shadow">
+            <a
+              href="https://qiita.com/niyu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all hover:scale-105 hover:shadow-xl">
                 <img
                   src={qiitaIcon}
-                  alt="Qiitaアイコン"
-                  className="w-10 h-10 rounded-full object-cover"
+                  alt="Qiita"
+                  className="w-12 h-12 mx-auto mb-4 group-hover:scale-110 transition-transform"
                 />
-                <span className="text-lg font-semibold">Qiita</span>
-              </button>
+                <p className="text-white text-center font-semibold">Qiita</p>
+              </div>
             </a>
 
             {/* Zenn */}
-            <a href="https://zenn.dev/niyu" className="w-full">
-              <button className="flex items-center gap-4 bg-white text-black w-full md:w-80 h-20 px-6 py-4 rounded shadow-md hover:shadow-lg transition-shadow">
+            <a
+              href="https://zenn.dev/niyu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all hover:scale-105 hover:shadow-xl">
                 <img
                   src={zennIcon}
-                  alt="Zennアイコン"
-                  className="w-10 h-10 rounded-full object-cover"
+                  alt="Zenn"
+                  className="w-12 h-12 mx-auto mb-4 group-hover:scale-110 transition-transform"
                 />
-                <span className="text-lg font-semibold">Zenn</span>
-              </button>
+                <p className="text-white text-center font-semibold">Zenn</p>
+              </div>
             </a>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
