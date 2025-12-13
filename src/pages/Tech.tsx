@@ -186,7 +186,7 @@ export default function Tech() {
           <div className="flex justify-center gap-2">
             <button
               onClick={() => mutate()}
-              className="bg-sky-500 hover:bg-sky-600 text-white px-3 py-1 rounded"
+              className="bg-sky-500/90 hover:bg-sky-500 text-white px-3 py-1 rounded border-2 border-sky-300"
             >
               再試行
             </button>
@@ -210,13 +210,13 @@ export default function Tech() {
     });
 
     return (
-      <div className="me-12">
-        <h3 className="text-2xl font-bold text-white text-center mb-4">
-          GitHub Contributions
-        </h3>
-        <div className="flex justify-center mb-2">
-          <div className="text-sm text-slate-300">
-            Total: {calendar.totalContributions}
+      <div>
+        <div className="flex justify-center mb-6">
+          <div className="text-white/80 text-lg">
+            Total Contributions:{" "}
+            <span className="font-bold text-white">
+              {calendar.totalContributions}
+            </span>
           </div>
         </div>
 
@@ -361,7 +361,7 @@ export default function Tech() {
                 <div>
                   <button
                     onClick={() => setSelectedDay(null)}
-                    className="bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded"
+                    className="bg-white/90 text-black px-3 py-1 rounded border-2 border-white/80 hover:bg-white"
                   >
                     閉じる
                   </button>
@@ -375,61 +375,92 @@ export default function Tech() {
   };
 
   return (
-    <div className="min-h-screen p-4 md:p-8">
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-10 text-center drop-shadow-lg">
-        My Skills
-      </h2>
+    <div className="min-h-screen px-4 md:px-8 lg:px-16 py-20">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-white mb-4">
+          Tech Stack
+        </h1>
+        <p className="text-center text-white/70 mb-16 text-lg">
+          私が使用している技術スタック
+        </p>
 
-      <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12 md:mb-20">
-        {skills.map((skill, i) => (
-          <div
-            key={i}
-            className="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-full sm:w-72 md:w-80 transition-transform hover:scale-105"
-          >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              {getIcon(skill.name)}
-              <h3 className="text-xl md:text-2xl font-semibold text-slate-800">
-                {skill.name}
-              </h3>
-            </div>
-            <p className="text-slate-700 text-base md:text-lg">
-              使用歴：{skill.years}年
-            </p>
-            <p className="text-slate-700 text-base md:text-lg">
-              使用シーン：{skill.scene}
-            </p>
+        {/* Skills Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+            プログラミング言語
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {skills.map((skill, i) => (
+              <div
+                key={i}
+                className="bg-white/70 backdrop-blur-sm border border-white rounded-2xl p-6 hover:bg-white/90 transition-all group"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="transform group-hover:scale-110 transition-transform">
+                    {getIcon(skill.name)}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    {skill.name}
+                  </h3>
+                </div>
+                <div className="space-y-1 text-sm">
+                  <p className="text-gray-800/90">
+                    <span className="text-gray-900 font-semibold">使用歴:</span>{" "}
+                    {skill.years}年
+                  </p>
+                  <p className="text-gray-800/90">
+                    <span className="text-gray-900 font-semibold">場面:</span>{" "}
+                    {skill.scene}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </section>
 
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-10 text-center drop-shadow-lg">
-        Tools & Environments
-      </h2>
-
-      <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-        {tools.map((tool, i) => (
-          <div
-            key={i}
-            className="bg-white rounded-2xl shadow-lg p-4 md:p-6 w-full sm:w-72 md:w-80 transition-transform hover:scale-105"
-          >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              {tool.icon}
-              <h3 className="text-xl md:text-2xl font-semibold text-slate-800">
-                {tool.name}
-              </h3>
-            </div>
-            <p className="text-slate-700 text-base md:text-lg">
-              使用歴：{tool.years}年
-            </p>
-            <p className="text-slate-700 text-base md:text-lg">
-              使用シーン：{tool.scene}
-            </p>
+        {/* Tools Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+            ツール・環境
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {tools.map((tool, i) => (
+              <div
+                key={i}
+                className="bg-white/70 backdrop-blur-sm border border-white rounded-2xl p-6 hover:bg-white/90 transition-all group"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="transform group-hover:scale-110 transition-transform">
+                    {tool.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    {tool.name}
+                  </h3>
+                </div>
+                <div className="space-y-1 text-sm">
+                  <p className="text-gray-800/90">
+                    <span className="text-gray-900 font-semibold">使用歴:</span>{" "}
+                    {tool.years}年
+                  </p>
+                  <p className="text-gray-800/90">
+                    <span className="text-gray-900 font-semibold">場面:</span>{" "}
+                    {tool.scene}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      {/* GitHub contributions (草) を表示 */}
-      <div className="mt-8">
-        <GitHubGrass username="niyu07" />
+        </section>
+
+        {/* GitHub Contributions */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+            GitHub Contributions
+          </h2>
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8">
+            <GitHubGrass username="niyu07" />
+          </div>
+        </section>
       </div>
     </div>
   );
