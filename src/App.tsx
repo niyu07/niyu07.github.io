@@ -17,8 +17,7 @@ function App() {
 
       if (currentScrollY < lastScrollY || currentScrollY < 10) {
         setIsHeaderVisible(true);
-      }
-      else if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      } else if (currentScrollY > lastScrollY && currentScrollY > 80) {
         setIsHeaderVisible(false);
         setMobileMenuOpen(false);
       }
@@ -26,31 +25,43 @@ function App() {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   return (
     <BrowserRouter basename={basename}>
-      <div className="bg-custom-gradient min-h-[300vh] w-full">
+      <div className="bg-gradient-to-b from-cyan-200 via-sky-200 to-blue-200 min-h-screen w-full flex flex-col justify-between">
         {/* ヘッダー */}
         <header
           className={`fixed top-0 left-0 right-0 z-50 p-4 md:p-8 bg-gradient-to-b from-black/30 to-transparent backdrop-blur-sm transition-transform duration-300 ${
-            isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+            isHeaderVisible ? "translate-y-0" : "-translate-y-full"
           }`}
         >
           {/* デスクトップメニュー */}
           <nav className="hidden md:flex gap-8 justify-end">
-            <Link to="/" className="text-white hover:text-gray-200 transition-colors">
+            <Link
+              to="/"
+              className="text-white hover:text-gray-200 transition-colors"
+            >
               ホーム
             </Link>
-            <Link to="/about" className="text-white hover:text-gray-200 transition-colors">
+            <Link
+              to="/about"
+              className="text-white hover:text-gray-200 transition-colors"
+            >
               私について
             </Link>
-            <Link to="/tech" className="text-white hover:text-gray-200 transition-colors">
+            <Link
+              to="/tech"
+              className="text-white hover:text-gray-200 transition-colors"
+            >
               技術
             </Link>
-            <Link to="/contact" className="text-white hover:text-gray-200 transition-colors">
+            <Link
+              to="/contact"
+              className="text-white hover:text-gray-200 transition-colors"
+            >
               お問い合わせ
             </Link>
           </nav>
@@ -123,7 +134,7 @@ function App() {
         </header>
 
         {/* メインの中身 */}
-        <main className="pt-20 md:pt-32">
+        <main className="pt-20 md:pt-32 flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -132,7 +143,7 @@ function App() {
           </Routes>
         </main>
         {/* フッター */}
-        <footer className="p-4 text-center">
+        <footer className="p-4 text-center shrink-0">
           <p className="text-white text-sm md:text-base">© 2023 My Website</p>
         </footer>
       </div>
