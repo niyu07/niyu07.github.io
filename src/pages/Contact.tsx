@@ -99,70 +99,86 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-300 to-sky-600 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-md w-full max-w-md p-8">
-        <h1 className="text-lg text-slate-700 mb-6 font-semibold">
-          if you contact me...
+    <div className="min-h-screen px-4 md:px-8 lg:px-16 py-20">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-white mb-4">
+          Contact
         </h1>
+        <p className="text-center text-white/70 mb-16 text-lg">
+          お気軽にご連絡ください
+        </p>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              お名前：
-            </label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full border rounded-md p-2 focus:ring-2 focus:ring-sky-400 outline-none"
-              required
-            />
-          </div>
+        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 md:p-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+            メッセージを送る
+          </h2>
 
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              メールアドレス：
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full border rounded-md p-2 focus:ring-2 focus:ring-sky-400 outline-none"
-              required
-            />
-          </div>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label
+                className="block text-white font-semibold mb-2"
+                htmlFor="contact-name"
+              >
+                お名前
+              </label>
+              <input
+                id="contact-name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full bg-white/10 border border-white/30 rounded-xl p-4 text-white placeholder-white/50 focus:ring-2 focus:ring-white/50 focus:outline-none transition-all"
+                placeholder="山田 太郎"
+                required
+              />
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">
-              メッセージ：
-            </label>
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="w-full border rounded-md p-2 h-32 resize-none focus:ring-2 focus:ring-sky-400 outline-none"
-              required
-            />
-          </div>
+            <div>
+              <label className="block text-white font-semibold mb-2">
+                メールアドレス
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-white/10 border border-white/30 rounded-xl p-4 text-white placeholder-white/50 focus:ring-2 focus:ring-white/50 focus:outline-none transition-all"
+                placeholder="example@example.com"
+                required
+              />
+            </div>
 
-          <div>
-            <button
-              type="submit"
-              className="w-full bg-sky-400 text-white py-2 rounded-md hover:bg-sky-500 transition-colors disabled:opacity-60"
-              disabled={!envOk || sending}
-            >
-              {sending ? "送信中..." : "送信する"}
-            </button>
-            {!envOk && (
-              <p className="text-sm text-red-600 mt-2">
-                EmailJS の設定が不足しています。開発サーバーを再起動し、`.env`
-                を確認してください。
-              </p>
-            )}
-            {errorMessage && (
-              <p className="text-sm text-red-600 mt-2">{errorMessage}</p>
-            )}
-          </div>
-        </form>
+            <div>
+              <label className="block text-white font-semibold mb-2">
+                メッセージ
+              </label>
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-full bg-white/10 border border-white/30 rounded-xl p-4 h-40 resize-none text-white placeholder-white/50 focus:ring-2 focus:ring-white/50 focus:outline-none transition-all"
+                placeholder="お問い合わせ内容をご記入ください"
+                required
+              />
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                className="w-full bg-white/90 text-gray-900 font-bold py-4 rounded-xl hover:bg-white transition-all disabled:opacity-50 disabled:cursor-not-allowed border-2 border-white/80"
+                disabled={!envOk || sending}
+              >
+                {sending ? "送信中..." : "送信する"}
+              </button>
+              {!envOk && (
+                <p className="text-sm text-red-400 mt-3">
+                  EmailJS の設定が不足しています。開発サーバーを再起動し、`.env`
+                  を確認してください。
+                </p>
+              )}
+              {errorMessage && (
+                <p className="text-sm text-red-400 mt-3">{errorMessage}</p>
+              )}
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
