@@ -238,8 +238,8 @@ export default function About() {
               },
               {
                 date: "2025.11.09",
-                company: "株式会社NTTデータ先端技術",
-                desc: "",
+                company: "株式会社NTTデータ",
+                desc: "ネットワークをゲーム形式で学びました。",
               },
             ].map((intern, idx) => (
               <div
