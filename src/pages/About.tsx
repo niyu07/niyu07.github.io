@@ -163,7 +163,21 @@ export default function About() {
                 title: "セキュリティミニキャンプ in Hiroshima 2025",
                 type: "参加",
               },
-              { date: "2025.12.06", title: "Setory vol.3", type: "運営" },
+              {
+                date: "2025.12.06",
+                title: "Setory vol.3",
+                type: "運営",
+              },
+              {
+                date: "2026.02.11 ~ 02.13",
+                title: "JANOG 57 in OSAKA",
+                type: "参加",
+              },
+              {
+                date: "2026.02.22",
+                title: "KC3Hack 2026",
+                type: "メンター",
+              },
             ].map((event, idx) => (
               <div
                 key={idx}
@@ -175,8 +189,8 @@ export default function About() {
                       event.type === "登壇"
                         ? "bg-red-500"
                         : event.type === "運営"
-                        ? "bg-purple-500"
-                        : "bg-green-500"
+                          ? "bg-purple-500"
+                          : "bg-green-500"
                     }`}
                   >
                     {event.type}
@@ -238,8 +252,13 @@ export default function About() {
               },
               {
                 date: "2025.11.09",
-                company: "株式会社NTTデータ",
+                company: "株式会社エヌ・ティ・ティエムイー",
                 desc: "ネットワークをゲーム形式で学びました。",
+              },
+              {
+                date: "2026.02.15 ~ 02.17, 02.18 ~ 02.20",
+                company: "株式会社エヌ・ティ・ティエムイー",
+                desc: "いろいろなネットワークに関することを学びました。",
               },
             ].map((intern, idx) => (
               <div
