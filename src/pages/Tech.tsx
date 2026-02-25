@@ -161,7 +161,7 @@ export default function Tech() {
         revalidateOnFocus: false,
         dedupingInterval: 60000,
         shouldRetryOnError: false,
-      }
+      },
     );
 
     const [selectedDay, setSelectedDay] = useState<any | null>(null);
@@ -329,7 +329,7 @@ export default function Tech() {
                             <div className="w-6 h-6 rounded-sm bg-transparent" />
                           )}
                         </div>
-                      ))
+                      )),
                     )}
                   </div>
                 </div>
@@ -452,7 +452,8 @@ export default function Tech() {
           </div>
         </section>
 
-        {/* GitHub Contributions */}
+        {/*
+        GitHub Contributions
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
             GitHub Contributions
@@ -461,6 +462,7 @@ export default function Tech() {
             <GitHubGrass username="niyu07" />
           </div>
         </section>
+        */}
       </div>
     </div>
   );
